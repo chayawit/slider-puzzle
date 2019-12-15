@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Slider Puzzle</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- import the webpage's javascript file -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      defer
+    ></script>
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div id="game-frame">
+      <div id="container">
+        <div id="images-frame">
+          <div class="p" id="p1">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=1"> -->
+            <!-- p1 -->
+          </div>
+          <div class="p" id="p2">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=2"> -->
+            <!-- p2 -->
+          </div>
+          <div class="p" id="p3">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=3"> -->
+            <!-- p3 -->
+          </div>
+          <div class="p" id="p4">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=4"> -->
+            <!-- p4 -->
+          </div>
+          <div class="p" id="p5">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=5"> -->
+            <!-- p5 -->
+          </div>
+          <div class="p" id="p6">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=6"> -->
+            <!-- p6 -->
+          </div>
+          <div class="p" id="p7">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=7"> -->
+            <!-- p7 -->
+          </div>
+          <div class="p" id="p8">
+            <!-- <img src="http://placehold.it/40x60/0bf/fff&text=8"> -->
+            <!-- p8 -->
+          </div>
+          <div class="p" id="blank">
+            <!-- blank -->
+          </div>
+        </div>
+        <div id="buttons-frame">
+          <label class="item" id="b1" data-row="0" data-col="0">
+            <input type="radio" name="s" value="b1" />
+            s1
+          </label>
+          <label class="item" id="b2" data-row="0" data-col="1">
+            <input type="radio" name="s" value="b2" />
+            s2
+          </label>
+          <label class="item" id="b3" data-row="0" data-col="2">
+            <input type="radio" name="s" value="b3" />
+            s3
+          </label>
+          <label class="item" id="b4" data-row="1" data-col="0">
+            <input type="radio" name="s" value="b4" />
+            s4
+          </label>
+          <label class="item" id="b5" data-row="1" data-col="1">
+            <input type="radio" name="s" value="b5" />
+            s5
+          </label>
+          <label class="item" id="b6" data-row="1" data-col="2">
+            <input type="radio" name="s" value="b6" />
+            s6
+          </label>
+          <label class="item" id="b7" data-row="2" data-col="0">
+            <input type="radio" name="s" value="b7" />
+            s7
+          </label>
+          <label class="item" id="b8" data-row="2" data-col="1">
+            <input type="radio" name="s" value="b8" />
+            s8
+          </label>
+          <label class="item" id="b9" data-row="2" data-col="2">
+            <input type="radio" name="s" value="b9" />
+            s9
+          </label>
+        </div>
+      </div>
+      <div id="tab-bar">
+        <ul>
+          <li id="moveCount">
+            <label>
+              <input
+                type="checkbox"
+                id="showMoveCount"
+                hidden
+                checked
+                name="showMoveCount"
+                value="show"
+                onchange="toggleMoveCount(this)"
+              />
+              <span class="btn" title="show/hide move count"></span>
+            </label>
+          </li>
+          <li id="refresh">
+            <button class="btn" title="refresh" onclick="refresh()">
+              <i class="fa fa-repeat" aria-hidden="true"></i>
+            </button>
+          </li>
+          <li id="newPic">
+            <button class="btn" title="new pic" onclick="newPic()">
+              <i class="fa fa-image" aria-hidden="true"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+<!--     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div> -->
+<!--     <script src="https://button.glitch.me/button.js"></script> -->
+  </body>
+</html>

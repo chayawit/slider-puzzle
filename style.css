@@ -1,0 +1,146 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+body {
+  margin: 0;
+}
+
+#game-frame {
+  display: flex;
+  flex-direction: column;
+  padding: 5vw;
+  height: 100vh;
+  // width: 100vmin;
+  box-sizing: border-box;
+  // margin: 0 auto;
+  // background: blue;
+}
+
+#container {
+  margin: 0 auto;
+  border: 5vmin solid black;
+  border-radius: 5vmin;
+  position: relative;
+  box-sizing: inherit;
+  height: 90vmin;
+  width: 90vmin;
+  order: 2;
+}
+
+#images-frame {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+#buttons-frame {
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "s1 s2 s3"
+    "s4 s5 s6"
+    "s7 s8 s9";
+  height: calc(100%);
+  width: 100%;
+}
+
+.item {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  opacity: 0;
+}
+
+.p {
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  position: absolute;
+  transition: transform 0.5s, opacity 1s;
+  background-size: 300% 300%;
+}
+
+#p1 {
+  background-position: 0 0;
+}
+#p2 {
+  background-position: 50% 0;
+}
+#p3 {
+  background-position: 100% 0;
+}
+#p4 {
+  background-position: 0 50%;
+}
+#p5 {
+  background-position: 50% 50%;
+}
+#p6 {
+  background-position: 100% 50%;
+}
+#p7 {
+  background-position: 0 100%;
+}
+#p8 {
+  background-position: 50% 100%;
+}
+#blank {
+  background-position: 100% 100%;
+  opacity: 0;
+}
+
+/* if vw > wh right else bottom */
+#tab-bar {
+  height: 15vmin;
+  // border: 1px solid red;
+  order: 1;
+  padding: 5vmin 0;
+  align-self: flex-end;
+}
+
+#tab-bar ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+#tab-bar li {
+  text-align: center;
+  font-size: 10vmin;
+  line-height: 15vmin;
+  padding-left: 1vmin;
+}
+
+.btn {
+  background-color: black; /* Blue background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 16px; /* Some padding */
+  font-size: 16px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius: 2vmin;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: darkgray;
+}
+
+
+.glitchButton {
+  
+}
