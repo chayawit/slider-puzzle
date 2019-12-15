@@ -1,45 +1,40 @@
-/*
-/ To-do list
-/ - game instruction
-/ - save pic
-/ - refactor to support dynamic cols and rows
-/ - remove radio buttons?
-/ - use gif
-/ - pic upload
-/ - timer
-*/
-
 "use strict";
 
-let allPicList;
+let picIds = [];
 let moveCount = 0;
 setNewPic();
 
 function setNewPic() {
-  if (allPicList) {
-    pickNewPic(allPicList);
+  if (picIds.length > 0) {
+    applyNewPic();
   } else {
-    $.getJSON("https://picsum.photos/list", function(data) {
-      console.log("success getting list: length = ", data.length);
-      allPicList = data;
-      pickNewPic(allPicList);
-    });
+    fetchPicId(true);
   }
 }
 
-function pickNewPic(data) {
-  let item = data[Math.floor(Math.random() * data.length)];
-  console.log(item);
-  $.getJSON(`https://picsum.photos/id/${item.id}/info`, function(data) {
-    console.log(data);
-    const frameWidth = Math.floor($("#images-frame").width());
-    const frameHeight = Math.floor($("#images-frame").height());
-    let url = `url("https://picsum.photos/id/${data.id}/${frameWidth}/${frameHeight}")`;
-    // const url = `url("https://picsum.photos/id/918/${frameWidth}/${frameHeight}")`;
-    // const url = `url("https://picsum.photos/id/918/500/500")`;
-    console.log(url);
-    $(".p").css("background-image", url);
+function fetchPicId(applyPic = false) {
+  let url = `https://picsum.photos/1`;
+  var jqxhr = $.get(url, function() {
+    picIds.push(jqxhr.getResponseHeader("Picsum-ID"));
+  }).done(function() {
+    console.log("done fetching. applying: " + applyPic);
+    if (applyPic) applyNewPic();
   });
+}
+
+function applyNewPic() {
+  let id = picIds.pop();
+  const frameWidth = Math.floor($("#images-frame").width());
+  const frameHeight = Math.floor($("#images-frame").height());
+  let url = `url("https://picsum.photos/id/${id}/${frameWidth}/${frameHeight}")`;
+  console.log(url);
+  $(".p").css("background-image", url);
+  $.getJSON(`https://picsum.photos/id/${id}/info`, function(data) {
+    console.log(data);
+  });
+  if (picIds.length === 0) { // Keep a backup id
+    fetchPicId(false);
+  }
 }
 
 // startGrid = [['p2', 'p3', 'blank'], ['p1', 'p4', 'p5'], ['p6', 'p7', 'p8']]
