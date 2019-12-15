@@ -3,8 +3,11 @@ Slider puzzle
 
 A simple puzzle that will remind of your childhood (at least for me?)
 
+Open <https://classic-slider-puzzle.glitch.me/> to play.
+
 How to run
 ------------
+
 This is just a simple html game.
 
 It can be run in browsers (tested only in Chrome).
